@@ -241,7 +241,7 @@ func getVpcConfig(ekssvc EKSAPI, ec2svc EC2API, model *Model) (*VPCConfiguration
 	if *resp.resourcesVpcConfig.EndpointPublicAccess == true && *resp.resourcesVpcConfig.PublicAccessCidrs[0] == "0.0.0.0/0" {
 		return nil, nil
 	}
-	log.Println("Detected private cluster, adding VPC Configuration...")
+	log.Println("Detected private cluster, adding VPC Configuration...!!!!")
 	subnets, err := filterNattedSubnets(ec2svc, resp.resourcesVpcConfig.SubnetIds)
 	if err != nil {
 		return nil, err
